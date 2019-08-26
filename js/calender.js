@@ -165,7 +165,7 @@ var now = function() {
 	year = today.getFullYear()
 	tianchong()
 	}
-now()
+window.onload =now
 back.addEventListener('click',now)
 add.addEventListener("click",addEvent)
 

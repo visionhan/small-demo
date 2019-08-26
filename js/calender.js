@@ -58,19 +58,31 @@ var loadThing=function(){
 var judeThing = function() {
 	thisMonthThing = []
 	  isthisMonth = false
-	if(thingList !=[]){
-	thingList.forEach(function(item, index) { //数组的遍历foreach
-		var riqi = new Date(item.time) //		newDate 变成时间的形式才有下面的这些方法
-//		console.log(riqi.getFullYear(), riqi.getMonth() + 1, year, month)
-		if(year == riqi.getFullYear() && riqi.getMonth() + 1 == month) {
-			isthisMonth = true
-			thisMonthThing.push({ //在thisMonthThing后面添加新内容
-				date: riqi.getDate(),
-				content: item.content,
-				month: riqi.getMonth() + 1
-			})
-		}
-	})}
+	  for(var i=0;i<thingList.length;i++){
+		  let item = thingList[i]
+		  var riqi = new Date(item.time) //		newDate 变成时间的形式才有下面的这些方法
+		  //		console.log(riqi.getFullYear(), riqi.getMonth() + 1, year, month)
+				  if(year == riqi.getFullYear() && riqi.getMonth() + 1 == month) {
+					  isthisMonth = true
+					  thisMonthThing.push({ //在thisMonthThing后面添加新内容
+						  date: riqi.getDate(),
+						  content: item.content,
+						  month: riqi.getMonth() + 1
+					  })
+				  } 
+	  }
+// 	thingList.forEach(function(item, index) { //数组的遍历foreach
+// 		var riqi = new Date(item.time) //		newDate 变成时间的形式才有下面的这些方法
+// //		console.log(riqi.getFullYear(), riqi.getMonth() + 1, year, month)
+// 		if(year == riqi.getFullYear() && riqi.getMonth() + 1 == month) {
+// 			isthisMonth = true
+// 			thisMonthThing.push({ //在thisMonthThing后面添加新内容
+// 				date: riqi.getDate(),
+// 				content: item.content,
+// 				month: riqi.getMonth() + 1
+// 			})
+// 		}
+// 	})
 //	console.log(thisMonthThing)
 	return thisMonthThing
 }

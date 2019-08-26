@@ -58,6 +58,7 @@ var loadThing=function(){
 var judeThing = function() {
 	thisMonthThing = []
 	  isthisMonth = false
+	if(thigList){
 	thingList.forEach(function(item, index) { //数组的遍历foreach
 		var riqi = new Date(item.time) //		newDate 变成时间的形式才有下面的这些方法
 //		console.log(riqi.getFullYear(), riqi.getMonth() + 1, year, month)
@@ -69,7 +70,7 @@ var judeThing = function() {
 				month: riqi.getMonth() + 1
 			})
 		}
-	})
+	})}
 //	console.log(thisMonthThing)
 	return thisMonthThing
 }
